@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="landscape">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,14 +16,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFP-Wm-d7Q" userLabel="result">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="59"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="59"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1C-8U-QHy">
-                                        <rect key="frame" x="574" y="8" width="85" height="43"/>
+                                        <rect key="frame" x="282" y="8" width="85" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <color key="textColor" red="0.10860589378238339" green="0.10860589378238339" blue="0.10860589378238339" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -39,21 +39,29 @@
                                     <constraint firstItem="z1C-8U-QHy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bFP-Wm-d7Q" secondAttribute="leadingMargin" id="Win-y0-Qsx"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wfR-PY-N4M" userLabel="standard">
-                                <rect key="frame" x="400" y="97" width="247" height="221"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfR-PY-N4M" userLabel="standard">
+                                <rect key="frame" x="51" y="103" width="324" height="709"/>
                                 <color key="backgroundColor" red="1" green="0.439466980396506" blue="0.42058489484486816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dDc-eF-gZC" userLabel="science">
-                                <rect key="frame" x="20" y="97" width="372" height="221"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDc-eF-gZC" userLabel="science">
+                                <rect key="frame" x="0.0" y="103" width="50" height="709"/>
                                 <color key="backgroundColor" red="0.38852057426373909" green="0.39727372303057051" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="IUK-tL-fLi"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="dDc-eF-gZC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5Ug-Mb-IUE"/>
+                            <constraint firstAttribute="bottom" secondItem="wfR-PY-N4M" secondAttribute="bottom" id="EX2-P6-0cI"/>
+                            <constraint firstItem="dDc-eF-gZC" firstAttribute="bottom" secondItem="wfR-PY-N4M" secondAttribute="bottom" id="ILI-ox-47u"/>
+                            <constraint firstItem="dDc-eF-gZC" firstAttribute="top" secondItem="wfR-PY-N4M" secondAttribute="top" id="JOb-Li-wVy"/>
                             <constraint firstItem="bFP-Wm-d7Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RGt-lW-TWQ"/>
                             <constraint firstItem="bFP-Wm-d7Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Sg5-bD-bBz"/>
+                            <constraint firstItem="wfR-PY-N4M" firstAttribute="top" secondItem="bFP-Wm-d7Q" secondAttribute="bottom" id="W5L-hR-4CR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bFP-Wm-d7Q" secondAttribute="trailing" id="Xqk-GA-Gph"/>
+                            <constraint firstItem="wfR-PY-N4M" firstAttribute="leading" secondItem="dDc-eF-gZC" secondAttribute="trailing" constant="1" id="tAw-HF-h6j"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wfR-PY-N4M" secondAttribute="trailing" id="vuW-kk-LX0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
