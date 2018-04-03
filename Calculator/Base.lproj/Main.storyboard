@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,31 +24,34 @@
                                 <rect key="frame" x="51" y="79" width="324" height="588"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2U-oz-LRO" userLabel="row0">
-                                        <rect key="frame" x="0.0" y="0.0" width="324" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="324" height="80.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGF-b3-0w0">
-                                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="80.5"/>
                                                 <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="eGF-b3-0w0" secondAttribute="height" multiplier="1:1" id="KfR-OH-YmM"/>
+                                                </constraints>
                                                 <state key="normal" title="AC">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5q-Nx-wGN">
-                                                <rect key="frame" x="81.5" y="0.0" width="80" height="100"/>
+                                                <rect key="frame" x="81.5" y="0.0" width="80" height="80.5"/>
                                                 <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="+/-">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T99-xA-T31">
-                                                <rect key="frame" x="162.5" y="0.0" width="80.5" height="100"/>
+                                                <rect key="frame" x="162.5" y="0.0" width="80.5" height="80.5"/>
                                                 <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="%">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAW-dR-BRx">
-                                                <rect key="frame" x="244" y="0.0" width="80" height="100"/>
+                                                <rect key="frame" x="244" y="0.0" width="80" height="80.5"/>
                                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="/">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -69,38 +73,37 @@
                                             <constraint firstItem="N5q-Nx-wGN" firstAttribute="width" secondItem="eGF-b3-0w0" secondAttribute="width" id="VuD-9B-x9l"/>
                                             <constraint firstAttribute="trailing" secondItem="MAW-dR-BRx" secondAttribute="trailing" id="VxC-FK-eMd"/>
                                             <constraint firstItem="T99-xA-T31" firstAttribute="top" secondItem="N5q-Nx-wGN" secondAttribute="top" id="WIF-hD-aDM"/>
-                                            <constraint firstAttribute="height" constant="100" id="a3Z-tZ-JpN"/>
                                             <constraint firstAttribute="bottom" secondItem="eGF-b3-0w0" secondAttribute="bottom" id="al3-bX-RhC"/>
                                             <constraint firstItem="MAW-dR-BRx" firstAttribute="bottom" secondItem="T99-xA-T31" secondAttribute="bottom" id="dlS-N1-J06"/>
                                             <constraint firstItem="T99-xA-T31" firstAttribute="width" secondItem="N5q-Nx-wGN" secondAttribute="width" id="m5c-hW-ysz"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2iE-L7-KwI" userLabel="row1">
-                                        <rect key="frame" x="0.0" y="101" width="324" height="100"/>
+                                        <rect key="frame" x="0.0" y="81.5" width="324" height="80.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydF-PB-XeG">
-                                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="80.5"/>
                                                 <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="AC">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Hy-cp-NNn">
-                                                <rect key="frame" x="81.5" y="0.0" width="80" height="100"/>
+                                                <rect key="frame" x="81.5" y="0.0" width="80" height="80.5"/>
                                                 <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="+/-">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rx8-gz-qGD">
-                                                <rect key="frame" x="162.5" y="0.0" width="80.5" height="100"/>
+                                                <rect key="frame" x="162.5" y="0.0" width="80.5" height="80.5"/>
                                                 <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="%">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWC-HC-GGk">
-                                                <rect key="frame" x="244" y="0.0" width="80" height="100"/>
+                                                <rect key="frame" x="244" y="0.0" width="80" height="80.5"/>
                                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="/">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
