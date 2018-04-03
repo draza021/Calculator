@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfR-PY-N4M" userLabel="standard">
-                                <rect key="frame" x="51" y="79" width="324" height="588"/>
+                                <rect key="frame" x="51" y="260.5" width="324" height="406.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2U-oz-LRO" userLabel="row0">
                                         <rect key="frame" x="0.0" y="0.0" width="324" height="80.5"/>
@@ -293,7 +293,7 @@
                                     <constraint firstItem="y7t-O5-Hb4" firstAttribute="height" secondItem="e0u-Q9-AdA" secondAttribute="height" id="0RY-Uq-xPr"/>
                                     <constraint firstItem="e0u-Q9-AdA" firstAttribute="trailing" secondItem="2iE-L7-KwI" secondAttribute="trailing" id="19a-nt-bre"/>
                                     <constraint firstItem="2iE-L7-KwI" firstAttribute="height" secondItem="H2U-oz-LRO" secondAttribute="height" id="579-9U-Rpa"/>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qPY-5L-egX" secondAttribute="bottom" id="65Q-ss-Zzc"/>
+                                    <constraint firstAttribute="bottom" secondItem="qPY-5L-egX" secondAttribute="bottom" priority="900" id="65Q-ss-Zzc"/>
                                     <constraint firstItem="qPY-5L-egX" firstAttribute="trailing" secondItem="y7t-O5-Hb4" secondAttribute="trailing" id="CvM-3T-89C"/>
                                     <constraint firstAttribute="trailing" secondItem="H2U-oz-LRO" secondAttribute="trailing" id="D7v-n5-lK1"/>
                                     <constraint firstItem="e0u-Q9-AdA" firstAttribute="top" secondItem="2iE-L7-KwI" secondAttribute="bottom" constant="1" id="Duh-eu-PCf"/>
@@ -313,17 +313,17 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDc-eF-gZC" userLabel="science">
-                                <rect key="frame" x="0.0" y="79" width="50" height="588"/>
+                                <rect key="frame" x="0.0" y="260.5" width="50" height="406.5"/>
                                 <color key="backgroundColor" red="0.38852057426373909" green="0.39727372303057051" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="IUK-tL-fLi"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFP-Wm-d7Q" userLabel="result">
-                                <rect key="frame" x="0.0" y="20" width="375" height="59"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="240.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1C-8U-QHy">
-                                        <rect key="frame" x="282" y="8" width="85" height="43"/>
+                                        <rect key="frame" x="282" y="189.5" width="85" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <color key="textColor" red="0.10860589378238339" green="0.10860589378238339" blue="0.10860589378238339" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -335,7 +335,6 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="z1C-8U-QHy" secondAttribute="trailing" id="D6S-eR-2Mn"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" id="HbX-vR-cVI"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="z1C-8U-QHy" secondAttribute="bottom" id="Iav-7S-0uk"/>
-                                    <constraint firstAttribute="height" constant="59" id="QKb-2p-Wxi"/>
                                     <constraint firstItem="z1C-8U-QHy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bFP-Wm-d7Q" secondAttribute="leadingMargin" id="Win-y0-Qsx"/>
                                 </constraints>
                             </view>
