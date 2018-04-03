@@ -24,9 +24,55 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2U-oz-LRO" userLabel="row0">
                                         <rect key="frame" x="0.0" y="0.0" width="324" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGF-b3-0w0">
+                                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="100"/>
+                                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5q-Nx-wGN">
+                                                <rect key="frame" x="81.5" y="0.0" width="80" height="100"/>
+                                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="+/-">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T99-xA-T31">
+                                                <rect key="frame" x="162.5" y="0.0" width="80.5" height="100"/>
+                                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="%">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAW-dR-BRx">
+                                                <rect key="frame" x="244" y="0.0" width="80" height="100"/>
+                                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="/">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="N5q-Nx-wGN" firstAttribute="leading" secondItem="eGF-b3-0w0" secondAttribute="trailing" constant="1" id="0P4-fP-K7V"/>
+                                            <constraint firstItem="N5q-Nx-wGN" firstAttribute="top" secondItem="eGF-b3-0w0" secondAttribute="top" id="2Kc-8E-AaD"/>
+                                            <constraint firstItem="MAW-dR-BRx" firstAttribute="width" secondItem="T99-xA-T31" secondAttribute="width" id="3ib-54-LEL"/>
+                                            <constraint firstItem="eGF-b3-0w0" firstAttribute="leading" secondItem="H2U-oz-LRO" secondAttribute="leading" id="7qR-LQ-01H"/>
+                                            <constraint firstItem="eGF-b3-0w0" firstAttribute="top" secondItem="H2U-oz-LRO" secondAttribute="top" id="BPC-Rn-Ajk"/>
+                                            <constraint firstItem="T99-xA-T31" firstAttribute="bottom" secondItem="N5q-Nx-wGN" secondAttribute="bottom" id="L32-vj-eV9"/>
+                                            <constraint firstItem="MAW-dR-BRx" firstAttribute="top" secondItem="T99-xA-T31" secondAttribute="top" id="O30-jl-jyd"/>
+                                            <constraint firstItem="N5q-Nx-wGN" firstAttribute="bottom" secondItem="eGF-b3-0w0" secondAttribute="bottom" id="Rvx-16-Amf"/>
+                                            <constraint firstItem="MAW-dR-BRx" firstAttribute="leading" secondItem="T99-xA-T31" secondAttribute="trailing" constant="1" id="SpG-1K-wu6"/>
+                                            <constraint firstItem="T99-xA-T31" firstAttribute="leading" secondItem="N5q-Nx-wGN" secondAttribute="trailing" constant="1" id="VRm-a1-hkk"/>
+                                            <constraint firstItem="N5q-Nx-wGN" firstAttribute="width" secondItem="eGF-b3-0w0" secondAttribute="width" id="VuD-9B-x9l"/>
+                                            <constraint firstAttribute="trailing" secondItem="MAW-dR-BRx" secondAttribute="trailing" id="VxC-FK-eMd"/>
+                                            <constraint firstItem="T99-xA-T31" firstAttribute="top" secondItem="N5q-Nx-wGN" secondAttribute="top" id="WIF-hD-aDM"/>
                                             <constraint firstAttribute="height" constant="100" id="a3Z-tZ-JpN"/>
+                                            <constraint firstAttribute="bottom" secondItem="eGF-b3-0w0" secondAttribute="bottom" id="al3-bX-RhC"/>
+                                            <constraint firstItem="MAW-dR-BRx" firstAttribute="bottom" secondItem="T99-xA-T31" secondAttribute="bottom" id="dlS-N1-J06"/>
+                                            <constraint firstItem="T99-xA-T31" firstAttribute="width" secondItem="N5q-Nx-wGN" secondAttribute="width" id="m5c-hW-ysz"/>
                                         </constraints>
                                     </view>
                                 </subviews>
