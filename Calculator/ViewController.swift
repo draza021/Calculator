@@ -112,7 +112,7 @@ extension ViewController {
                     switch operation {
                     case .add:
                         let result = (firstOperand ?? 0) + (secondOperand ?? 0)
-                        resultLabel.text = "\( result )"
+                        resultLabel.text = "\( NumberFormatter.decimalFormatter.string(for: result)  ?? "" )"
                     default:
                         break
                     }
