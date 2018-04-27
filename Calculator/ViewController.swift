@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         applyTheme(with: .brown, fontSize: 35)
         setupDigitButtonTaps()
         setupOperatorButtonTaps()
-        
+        setupDotCaption()
     }
 }
 
@@ -147,7 +147,7 @@ extension ViewController {
     
     func extractOperand() -> Double? {
         let textFromResultLabel = resultLabel.text ?? ""
-        return Double(textFromResultLabel)
+        return NumberFormatter.decimalFormatter.number(from: textFromResultLabel)?.doubleValue
     }
     
     func cleanupUI() {
@@ -176,6 +176,11 @@ extension ViewController {
         for button in operatorButtons {
             button.addTarget(self, action: #selector(ViewController.didTapOperator), for: .touchUpInside)
         }
+    }
+    
+    func setupDotCaption() {
+        let s = Locale.current.decimalSeparator 
+        dotButton.setTitle(s, for: .normal)
     }
     
     

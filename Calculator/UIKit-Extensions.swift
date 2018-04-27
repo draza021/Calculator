@@ -14,3 +14,11 @@ extension UIButton {
     }
 }
 
+extension NumberFormatter {
+    static let decimalFormatter: NumberFormatter = {
+        let nf = NumberFormatter()
+        nf.maximumFractionDigits = 2
+        return nf
+    }()
+}
+
