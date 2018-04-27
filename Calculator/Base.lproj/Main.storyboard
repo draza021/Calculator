@@ -39,6 +39,9 @@
                                                 <variation key="heightClass=regular-widthClass=compact">
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="26"/>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="clearAll" destination="BYZ-38-t0r" eventType="touchUpInside" id="ADc-Ss-CFi"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5q-Nx-wGN">
                                                 <rect key="frame" x="94" y="0.0" width="93" height="93"/>
@@ -912,6 +915,23 @@
                     </view>
                     <connections>
                         <outlet property="btnZero" destination="hgj-TY-qS9" id="4st-Ta-2Hj"/>
+                        <outlet property="dotButton" destination="hvn-4c-JfZ" id="MiW-Ts-EQQ"/>
+                        <outlet property="resultLabel" destination="z1C-8U-QHy" id="xyR-ul-gI1"/>
+                        <outletCollection property="digitButtons" destination="hgj-TY-qS9" collectionClass="NSMutableArray" id="PIm-eg-1nF"/>
+                        <outletCollection property="digitButtons" destination="vDw-tu-pzu" collectionClass="NSMutableArray" id="bqj-Kc-3vT"/>
+                        <outletCollection property="digitButtons" destination="XB8-ww-vDb" collectionClass="NSMutableArray" id="oR8-Yf-5Wv"/>
+                        <outletCollection property="digitButtons" destination="Jgz-Zx-boO" collectionClass="NSMutableArray" id="gGw-mg-B3P"/>
+                        <outletCollection property="digitButtons" destination="1Nt-9T-CBY" collectionClass="NSMutableArray" id="VfD-uj-fAw"/>
+                        <outletCollection property="digitButtons" destination="xkp-pv-fzx" collectionClass="NSMutableArray" id="22b-qY-SrO"/>
+                        <outletCollection property="digitButtons" destination="Zq3-CN-QcK" collectionClass="NSMutableArray" id="2I0-YB-6a7"/>
+                        <outletCollection property="digitButtons" destination="ydF-PB-XeG" collectionClass="NSMutableArray" id="KFx-Gq-Zpe"/>
+                        <outletCollection property="digitButtons" destination="8Hy-cp-NNn" collectionClass="NSMutableArray" id="0J3-1M-Dad"/>
+                        <outletCollection property="digitButtons" destination="rx8-gz-qGD" collectionClass="NSMutableArray" id="4dY-a3-RBg"/>
+                        <outletCollection property="operatorButtons" destination="MAW-dR-BRx" collectionClass="NSMutableArray" id="9sG-Vw-ven"/>
+                        <outletCollection property="operatorButtons" destination="vWC-HC-GGk" collectionClass="NSMutableArray" id="uTk-mY-MjZ"/>
+                        <outletCollection property="operatorButtons" destination="hca-5P-U3b" collectionClass="NSMutableArray" id="aHQ-gC-iWm"/>
+                        <outletCollection property="operatorButtons" destination="lKa-q1-8dh" collectionClass="NSMutableArray" id="O9A-ZX-CQd"/>
+                        <outletCollection property="operatorButtons" destination="tjt-MQ-3Wo" collectionClass="NSMutableArray" id="nt6-ts-mVb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
