@@ -320,9 +320,12 @@
                                                 <rect key="frame" x="188" y="0.0" width="93" height="93"/>
                                                 <color key="backgroundColor" red="0.82352941176470584" green="0.82745098039215681" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
-                                                <state key="normal" title=",">
+                                                <state key="normal" title=".">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didTapDot:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DRc-8V-DBa"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjt-MQ-3Wo">
                                                 <rect key="frame" x="282" y="0.0" width="93" height="93"/>

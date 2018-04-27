@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     //MARK:- Data model
     var firstOperand: Double?
     var secondOperand: Double?
+    var operation: Operation?
     
     enum Operation {
         case add, subtract, divide, multiply
@@ -35,6 +36,7 @@ class ViewController: UIViewController {
         cleanupUI()
         applyTheme(with: .brown, fontSize: 35)
         setupDigitButtonTaps()
+        setupOperatorButtonTaps()
         
     }
 }
@@ -69,30 +71,87 @@ extension ViewController {
     }
     
     @IBAction func didTapDigit(_ sender: UIButton) {
-        if let caption = sender.title(for: .normal) {
+        if let caption = sender.caption {
             var textFromResultLabel = resultLabel.text ?? ""
             textFromResultLabel += caption
             resultLabel.text = textFromResultLabel
         }
     }
     
-    @IBAction func didTapOperator(_ sender: UIButton) {
-//        if let caption = sender.title(for: .normal) {
-//            var textFromResultLabel = resultLabel.text ?? ""
-//
-//            if let convertedValue = Double(textFromResultLabel) {
-//                firstOperand = convertedValue
-//            }
-//        }
+    @IBAction func didTapDot(_ sender: UIButton) {
+        if let caption = sender.caption {
+            var textFromResultLabel = resultLabel.text ?? ""
+            if !textFromResultLabel.contains(caption) {
+                textFromResultLabel += caption
+                resultLabel.text = textFromResultLabel
+            }
+            
+        }
     }
     
+    @IBAction func didTapOperator(_ sender: UIButton) {
+        if operation == nil {
+            firstOperand = extractOperand()
+            resultLabel.text = nil
+        }
+        
+        if let caption = sender.caption {
+            switch caption {
+            case "+":
+                operation = .add
+            case "-":
+                operation = .subtract
+            case "÷":
+                operation = .divide
+            case "X":
+                operation = .multiply
+            case "=":
+                secondOperand = extractOperand()
+                
+                if let operation = operation {
+                    switch operation {
+                    case .add:
+                        let result = (firstOperand ?? 0) + (secondOperand ?? 0)
+                        resultLabel.text = "\( result )"
+                    default:
+                        break
+                    }
+                    
+                    for button in operatorButtons {
+                        button.isUserInteractionEnabled = true
+                        button.alpha = 1
+                    }
+                    
+                    firstOperand = nil
+                    secondOperand = nil
+                    self.operation = nil
+                }
+                
+            default:
+                break
+            }
+            
+            for button in operatorButtons {
+                if let caption = button.caption {
+                    if caption == "=" { continue }
+                    button.isUserInteractionEnabled = false
+                    button.alpha = 0.5
+                }
+            }
+        }
+    }
 }
 
 //MARK:- Functions
 extension ViewController {
     
+    func extractOperand() -> Double? {
+        let textFromResultLabel = resultLabel.text ?? ""
+        return Double(textFromResultLabel)
+    }
+    
     func cleanupUI() {
-        clearAll()
+        resultLabel.text = nil
     }
     
     func applyTheme(with color: UIColor, fontSize: CGFloat) {
@@ -109,7 +168,13 @@ extension ViewController {
     
     func setupDigitButtonTaps() {
         for button in digitButtons {
-            button.addTarget(self, action: #selector(ViewController.didTapDigit(_:)), for: .touchUpInside)
+            button.addTarget(self, action: #selector(ViewController.didTapDigit), for: .touchUpInside)
+        }
+    }
+    
+    func setupOperatorButtonTaps() {
+        for button in operatorButtons {
+            button.addTarget(self, action: #selector(ViewController.didTapOperator), for: .touchUpInside)
         }
     }
     
