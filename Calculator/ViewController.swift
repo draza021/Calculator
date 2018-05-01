@@ -34,10 +34,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         cleanupUI()
-        applyTheme(with: #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1) , fontSize: 35)
+        applyThemeForOperatorButtons(with: #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1) , fontSize: 35)
         setupDigitButtonTaps()
         setupOperatorButtonTaps()
         setupDotCaption()
+        setAllButtonsBackground(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .highlighted)
     }
 }
 
@@ -97,7 +98,7 @@ extension ViewController {
             resultLabel.text = nil
         }
         
-        if let operationCaption = extractOperation(sender: sender, caption: sender.caption) {
+        if let operationCaption = extractOperationFrom(sender, with: sender.caption) {
             switch operationCaption {
             case .add:
                 operation = .add
@@ -138,7 +139,7 @@ extension ViewController {
 //MARK:- Functions
 private extension ViewController {
     
-    func extractOperation(sender: UIButton, caption: String?) -> Operation? {
+    func extractOperationFrom(_ sender: UIButton, with caption: String?) -> Operation? {
         if let caption = caption {
             switch caption {
             case "+":
@@ -167,7 +168,7 @@ private extension ViewController {
         resultLabel.text = nil
     }
     
-    func applyTheme(with color: UIColor, fontSize: CGFloat) {
+    func applyThemeForOperatorButtons(with color: UIColor, fontSize: CGFloat) {
         for button in operatorButtons {
             button.backgroundColor = color
         }
@@ -176,6 +177,12 @@ private extension ViewController {
             if let font = button.titleLabel?.font {
                 button.titleLabel?.font = font.withSize(fontSize)
             }
+        }
+    }
+    
+    func setAllButtonsBackground(_ color: UIColor, for state: UIControlState) {
+        for button in allButtons {
+            button.setBackgroundColor(color, for: state)
         }
     }
     
