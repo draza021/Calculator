@@ -98,7 +98,7 @@ extension ViewController {
             resultLabel.text = nil
         }
         
-        if let operationCaption = extractOperationFrom(sender, with: sender.caption) {
+        if let operationCaption = extractOperationFromSender(with: sender.caption) {
             switch operationCaption {
             case .add:
                 operation = .add
@@ -139,7 +139,7 @@ extension ViewController {
 //MARK:- Functions
 private extension ViewController {
     
-    func extractOperationFrom(_ sender: UIButton, with caption: String?) -> Operation? {
+    func extractOperationFromSender(with caption: String?) -> Operation? {
         if let caption = caption {
             switch caption {
             case "+":
