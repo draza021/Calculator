@@ -75,6 +75,11 @@ extension ViewController {
             var textFromResultLabel = resultLabel.text ?? ""
             textFromResultLabel += caption
             resultLabel.text = textFromResultLabel
+            if firstOperand == nil {
+                firstOperand = Double(textFromResultLabel)
+            } else {
+                secondOperand = Double(textFromResultLabel)
+            }
         }
     }
     
@@ -89,7 +94,32 @@ extension ViewController {
         }
     }
     
+    private func disableOperators() {
+        for button in operatorButtons {
+            if let caption = button.caption {
+                if caption == "=" { continue }
+                button.isUserInteractionEnabled = false
+                button.alpha = 0.5
+            }
+        }
+    }
+    
+    private func enableOperators() {
+        for button in operatorButtons {
+            button.isUserInteractionEnabled = true
+            button.alpha = 1
+        }
+    }
+    
+    private func resetOperation() {
+        firstOperand = nil
+        secondOperand = nil
+        self.operation = nil
+    }
+    
     @IBAction func didTapOperator(_ sender: UIButton) {
+        if firstOperand == nil { return }
+        
         if operation == nil {
             firstOperand = extractOperand()
             resultLabel.text = nil
@@ -99,6 +129,7 @@ extension ViewController {
             switch caption {
             case "+":
                 operation = .add
+                disableOperators()
             case "-":
                 operation = .subtract
             case "÷":
@@ -117,27 +148,14 @@ extension ViewController {
                         break
                     }
                     
-                    for button in operatorButtons {
-                        button.isUserInteractionEnabled = true
-                        button.alpha = 1
-                    }
-                    
-                    firstOperand = nil
-                    secondOperand = nil
-                    self.operation = nil
+                    enableOperators()
+                    resetOperation()
                 }
-                
             default:
                 break
             }
             
-            for button in operatorButtons {
-                if let caption = button.caption {
-                    if caption == "=" { continue }
-                    button.isUserInteractionEnabled = false
-                    button.alpha = 0.5
-                }
-            }
+            
         }
     }
 }
