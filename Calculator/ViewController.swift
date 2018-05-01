@@ -112,25 +112,21 @@ extension ViewController {
                 operation = .multiply
                 disableOperators()
             case .equal:
-                
                 if let operation = operation {
+                    var result: Double?
                     switch operation {
                     case .add:
-                        let result = add(firstOperand, secondOperand)
-                        showResult(result)
+                        result = add()
                     case .subtract:
-                        let result = subtract(firstOperand, secondOperand)
-                        showResult(result)
+                        result = subtract()
                     case .divide:
-                        let result = divide(firstOperand, secondOperand)
-                        showResult(result)
+                        result = divide()
                     case .multiply:
-                        let result = multiply(firstOperand, secondOperand)
-                        showResult(result)
+                        result = multiply()
                     default:
                         break
                     }
-                    
+                    showResult(result)
                     enableOperators()
                     resetOperation()
                 }
@@ -140,7 +136,7 @@ extension ViewController {
 }
 
 //MARK:- Functions
-extension ViewController {
+private extension ViewController {
     
     func extractOperation(sender: UIButton, caption: String?) -> Operation? {
         if let caption = caption {
@@ -200,7 +196,7 @@ extension ViewController {
         dotButton.setTitle(s, for: .normal)
     }
     
-    private func disableOperators() {
+    func disableOperators() {
         for button in operatorButtons {
             if let caption = button.caption {
                 if caption == "=" { continue }
@@ -210,14 +206,14 @@ extension ViewController {
         }
     }
     
-    private func enableOperators() {
+    func enableOperators() {
         for button in operatorButtons {
             button.isUserInteractionEnabled = true
             button.alpha = 1
         }
     }
     
-    private func resetOperation() {
+    func resetOperation() {
         firstOperand = nil
         secondOperand = nil
         self.operation = nil
@@ -225,7 +221,7 @@ extension ViewController {
 }
 
 //MARK:- Operation functions
-extension ViewController {
+private extension ViewController {
     
     func showResult(_ result: Double?) {
         if let result = result {
@@ -233,28 +229,28 @@ extension ViewController {
         }
     }
     
-    func add(_ firstOperand: Double?, _ secondOperand: Double?) -> Double? {
+    func add() -> Double? {
         if let firstOperand = firstOperand, let secondOperand = secondOperand {
             return firstOperand + secondOperand
         }
         return nil
     }
     
-    func subtract(_ firstOperand: Double?, _ secondOperand: Double?) -> Double? {
+    func subtract() -> Double? {
         if let firstOperand = firstOperand, let secondOperand = secondOperand {
             return firstOperand - secondOperand
         }
         return nil
     }
     
-    func divide(_ firstOperand: Double?, _ secondOperand: Double?) -> Double? {
+    func divide() -> Double? {
         if let firstOperand = firstOperand, let secondOperand = secondOperand {
             return firstOperand / secondOperand
         }
         return nil
     }
     
-    func multiply(_ firstOperand: Double?, _ secondOperand: Double?) -> Double? {
+    func multiply() -> Double? {
         if let firstOperand = firstOperand, let secondOperand = secondOperand {
             return firstOperand * secondOperand
         }
