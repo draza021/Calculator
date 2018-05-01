@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         cleanupUI()
-        applyTheme(with: .brown, fontSize: 35)
+        applyTheme(with: #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1) , fontSize: 35)
         setupDigitButtonTaps()
         setupOperatorButtonTaps()
         setupDotCaption()
@@ -75,11 +75,6 @@ extension ViewController {
             var textFromResultLabel = resultLabel.text ?? ""
             textFromResultLabel += caption
             resultLabel.text = textFromResultLabel
-            if firstOperand == nil {
-                firstOperand = Double(textFromResultLabel)
-            } else {
-                secondOperand = Double(textFromResultLabel)
-            }
         }
     }
     
@@ -90,60 +85,48 @@ extension ViewController {
                 textFromResultLabel += caption
                 resultLabel.text = textFromResultLabel
             }
-            
         }
-    }
-    
-    private func disableOperators() {
-        for button in operatorButtons {
-            if let caption = button.caption {
-                if caption == "=" { continue }
-                button.isUserInteractionEnabled = false
-                button.alpha = 0.5
-            }
-        }
-    }
-    
-    private func enableOperators() {
-        for button in operatorButtons {
-            button.isUserInteractionEnabled = true
-            button.alpha = 1
-        }
-    }
-    
-    private func resetOperation() {
-        firstOperand = nil
-        secondOperand = nil
-        self.operation = nil
     }
     
     @IBAction func didTapOperator(_ sender: UIButton) {
-        if firstOperand == nil { return }
-        
         if operation == nil {
             firstOperand = extractOperand()
             resultLabel.text = nil
+        } else {
+            secondOperand = extractOperand()
+            resultLabel.text = nil
         }
         
-        if let caption = sender.caption {
-            switch caption {
-            case "+":
+        if let operationCaption = extractOperation(sender: sender, caption: sender.caption) {
+            switch operationCaption {
+            case .add:
                 operation = .add
                 disableOperators()
-            case "-":
+            case .subtract:
                 operation = .subtract
-            case "÷":
+                disableOperators()
+            case .divide:
                 operation = .divide
-            case "X":
+                disableOperators()
+            case .multiply:
                 operation = .multiply
-            case "=":
-                secondOperand = extractOperand()
+                disableOperators()
+            case .equal:
                 
                 if let operation = operation {
                     switch operation {
                     case .add:
-                        let result = (firstOperand ?? 0) + (secondOperand ?? 0)
-                        resultLabel.text = "\( NumberFormatter.decimalFormatter.string(for: result)  ?? "" )"
+                        let result = add(firstOperand, secondOperand)
+                        showResult(result)
+                    case .subtract:
+                        let result = subtract(firstOperand, secondOperand)
+                        showResult(result)
+                    case .divide:
+                        let result = divide(firstOperand, secondOperand)
+                        showResult(result)
+                    case .multiply:
+                        let result = multiply(firstOperand, secondOperand)
+                        showResult(result)
                     default:
                         break
                     }
@@ -151,17 +134,33 @@ extension ViewController {
                     enableOperators()
                     resetOperation()
                 }
-            default:
-                break
             }
-            
-            
         }
     }
 }
 
 //MARK:- Functions
 extension ViewController {
+    
+    func extractOperation(sender: UIButton, caption: String?) -> Operation? {
+        if let caption = caption {
+            switch caption {
+            case "+":
+                return .add
+            case "-":
+                return .subtract
+            case "÷":
+                return .divide
+            case "X":
+                return .multiply
+            case "=":
+                return .equal
+            default:
+                break
+            }
+        }
+        return nil
+    }
     
     func extractOperand() -> Double? {
         let textFromResultLabel = resultLabel.text ?? ""
@@ -201,6 +200,65 @@ extension ViewController {
         dotButton.setTitle(s, for: .normal)
     }
     
+    private func disableOperators() {
+        for button in operatorButtons {
+            if let caption = button.caption {
+                if caption == "=" { continue }
+                button.isUserInteractionEnabled = false
+                button.alpha = 0.5
+            }
+        }
+    }
     
+    private func enableOperators() {
+        for button in operatorButtons {
+            button.isUserInteractionEnabled = true
+            button.alpha = 1
+        }
+    }
+    
+    private func resetOperation() {
+        firstOperand = nil
+        secondOperand = nil
+        self.operation = nil
+    }
+}
+
+//MARK:- Operation functions
+extension ViewController {
+    
+    func showResult(_ result: Double?) {
+        if let result = result {
+            resultLabel.text = "\( NumberFormatter.decimalFormatter.string(for: result)  ?? "" )"
+        }
+    }
+    
+    func add(_ firstOperand: Double?, _ secondOperand: Double?) -> Double? {
+        if let firstOperand = firstOperand, let secondOperand = secondOperand {
+            return firstOperand + secondOperand
+        }
+        return nil
+    }
+    
+    func subtract(_ firstOperand: Double?, _ secondOperand: Double?) -> Double? {
+        if let firstOperand = firstOperand, let secondOperand = secondOperand {
+            return firstOperand - secondOperand
+        }
+        return nil
+    }
+    
+    func divide(_ firstOperand: Double?, _ secondOperand: Double?) -> Double? {
+        if let firstOperand = firstOperand, let secondOperand = secondOperand {
+            return firstOperand / secondOperand
+        }
+        return nil
+    }
+    
+    func multiply(_ firstOperand: Double?, _ secondOperand: Double?) -> Double? {
+        if let firstOperand = firstOperand, let secondOperand = secondOperand {
+            return firstOperand * secondOperand
+        }
+        return nil
+    }
 }
 
