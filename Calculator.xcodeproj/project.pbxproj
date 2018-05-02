@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C20012AF2099C54B0078BF4D /* Class-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20012AE2099C54B0078BF4D /* Class-Extensions.swift */; };
 		C2321D582093A656003DC550 /* UIKit-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2321D572093A656003DC550 /* UIKit-Extensions.swift */; };
 		E8C43044206C1BB500277A17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C43043206C1BB500277A17 /* AppDelegate.swift */; };
 		E8C43046206C1BB500277A17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C43045206C1BB500277A17 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C20012AE2099C54B0078BF4D /* Class-Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Class-Extensions.swift"; sourceTree = "<group>"; };
 		C2321D572093A656003DC550 /* UIKit-Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit-Extensions.swift"; sourceTree = "<group>"; };
 		E8C43040206C1BB500277A17 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C43043206C1BB500277A17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				E8C4304C206C1BB500277A17 /* LaunchScreen.storyboard */,
 				E8C4304F206C1BB500277A17 /* Info.plist */,
 				C2321D572093A656003DC550 /* UIKit-Extensions.swift */,
+				C20012AE2099C54B0078BF4D /* Class-Extensions.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C20012AF2099C54B0078BF4D /* Class-Extensions.swift in Sources */,
 				E8C43046206C1BB500277A17 /* ViewController.swift in Sources */,
 				E8C43044206C1BB500277A17 /* AppDelegate.swift in Sources */,
 				C2321D582093A656003DC550 /* UIKit-Extensions.swift in Sources */,
