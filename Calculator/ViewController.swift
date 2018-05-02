@@ -90,6 +90,7 @@ extension ViewController {
     }
     
     @IBAction func didTapOperator(_ sender: UIButton) {
+        if resultLabel.text == nil { return }
         if operation == nil {
             firstOperand = extractOperand()
             resultLabel.text = nil
