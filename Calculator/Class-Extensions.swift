@@ -115,27 +115,28 @@ extension ViewController {
         dotButton.setTitle(s, for: .normal)
     }
     
-    func disableOperators() {
-        for button in operatorButtons {
-            if let caption = button.caption {
-                if caption == "=" { continue }
-                button.isUserInteractionEnabled = false
-                button.alpha = 0.5
-            }
-        }
-    }
-    
-    func enableOperators() {
-        for button in operatorButtons {
-            button.isUserInteractionEnabled = true
-            button.alpha = 1
-        }
-    }
-    
     func resetOperation() {
         firstOperand = nil
         secondOperand = nil
         self.operation = nil
+    }
+    
+    func checkForOperatorInResultLabel(_ textFromResultLabel: inout String, _ caption: String) {
+        if !operatorCaptions.contains(textFromResultLabel) {
+            textFromResultLabel += caption
+            resultLabel.text = textFromResultLabel
+        } else {
+            resultLabel.text = nil
+            textFromResultLabel = caption
+            resultLabel.text = textFromResultLabel
+        }
+    }
+    
+    func showOperator(_ operationCaption: String?) {
+        if let operationCaption = operationCaption {
+            clearAll()
+            resultLabel.text = operationCaption
+        }
     }
 }
 

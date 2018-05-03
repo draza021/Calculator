@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     var firstOperand: Double?
     var secondOperand: Double?
     var operation: Operation?
+    let operatorCaptions: [String] = ["+", "-", "X", "÷"]
     
     enum Operation {
         case add, subtract, divide, multiply
@@ -52,8 +53,7 @@ extension ViewController {
     @IBAction func didTapDigit(_ sender: UIButton) {
         if let caption = sender.caption {
             var textFromResultLabel = resultLabel.text ?? ""
-            textFromResultLabel += caption
-            resultLabel.text = textFromResultLabel
+            checkForOperatorInResultLabel(&textFromResultLabel, caption)
         }
     }
     
@@ -72,25 +72,23 @@ extension ViewController {
         if operation == nil {
             firstOperand = extractOperand()
             resultLabel.text = nil
+            showOperator(sender.caption)
         } else {
             secondOperand = extractOperand()
             resultLabel.text = nil
+            showOperator(sender.caption)
         }
         
         if let operationCaption = extractOperationFromSender(with: sender.caption) {
             switch operationCaption {
             case .add:
                 operation = .add
-                disableOperators()
             case .subtract:
                 operation = .subtract
-                disableOperators()
             case .divide:
                 operation = .divide
-                disableOperators()
             case .multiply:
                 operation = .multiply
-                disableOperators()
             case .equal:
                 if let operation = operation {
                     var result: Double?
@@ -107,7 +105,6 @@ extension ViewController {
                         break
                     }
                     showResult(result)
-                    enableOperators()
                     resetOperation()
                 }
             }
