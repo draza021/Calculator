@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     var firstOperand: Double?
     var secondOperand: Double?
     var operation: Operation?
-    let operatorCaptions: [String] = ["+", "-", "X", "÷"]
+    let operatorCaptions: [String] = ["+", "-", "×", "÷"]
     
     enum Operation {
         case add, subtract, divide, multiply

@@ -60,7 +60,7 @@ extension ViewController {
                 return .subtract
             case "÷":
                 return .divide
-            case "X":
+            case "×":
                 return .multiply
             case "=":
                 return .equal

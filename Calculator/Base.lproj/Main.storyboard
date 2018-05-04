@@ -138,7 +138,7 @@
                                                 <rect key="frame" x="282" y="0.0" width="93" height="93"/>
                                                 <color key="backgroundColor" red="1" green="0.5490196078431373" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
-                                                <state key="normal" title="X">
+                                                <state key="normal" title="×">
                                                     <color key="titleColor" red="0.98840083099999998" green="0.97555811699999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=compact">
