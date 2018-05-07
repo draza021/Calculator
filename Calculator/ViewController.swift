@@ -79,34 +79,25 @@ extension ViewController {
             showOperator(sender.caption)
         }
         
-        if let operationCaption = extractOperationFromSender(with: sender.caption) {
-            switch operationCaption {
-            case .add:
-                operation = .add
-            case .subtract:
-                operation = .subtract
-            case .divide:
-                operation = .divide
-            case .multiply:
-                operation = .multiply
-            case .equal:
-                if let operation = operation {
-                    var result: Double?
-                    switch operation {
-                    case .add:
-                        result = add()
-                    case .subtract:
-                        result = subtract()
-                    case .divide:
-                        result = divide()
-                    case .multiply:
-                        result = multiply()
-                    default:
-                        break
-                    }
-                    showResult(result)
-                    resetOperation()
+        if let operation = extractOperationFromSender(with: sender.caption) {
+            if operation != .equal {
+                self.operation = operation
+            } else {
+                var result: Double?
+                switch self.operation {
+                case .add?:
+                    result = add()
+                case .subtract?:
+                    result = subtract()
+                case .divide?:
+                    result = divide()
+                case .multiply?:
+                    result = multiply()
+                default:
+                    break
                 }
+                showResult(result)
+                resetOperation()
             }
         }
     }
